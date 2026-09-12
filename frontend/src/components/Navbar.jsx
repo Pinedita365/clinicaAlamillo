@@ -49,7 +49,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group" aria-label="Clínica Dental Alamillo – Inicio">
-          <img src="/LogoClinica.jpeg" alt="" className="h-9 w-9 rounded-xl object-cover shadow-sm" aria-hidden="true" />
+          <img src={`${import.meta.env.BASE_URL}LogoClinica.jpeg`} alt="" className="h-9 w-9 rounded-xl object-cover shadow-sm" aria-hidden="true" />
           <span className={`font-display font-bold text-lg leading-tight transition-colors
             ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
             <span className="text-teal-600">Alamillo</span>{' '}

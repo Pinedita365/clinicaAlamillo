@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4" aria-label="Clínica Dental Alamillo – Inicio">
-              <img src="/LogoClinica.jpeg" alt="" className="h-9 w-9 rounded-xl object-cover" aria-hidden="true" />
+              <img src={`${import.meta.env.BASE_URL}LogoClinica.jpeg`} alt="" className="h-9 w-9 rounded-xl object-cover" aria-hidden="true" />
               <span className="font-display font-bold text-white text-lg">
                 Alamillo <span className="text-teal-400 font-medium text-base">Dental</span>
               </span>

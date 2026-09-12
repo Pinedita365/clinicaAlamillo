@@ -56,7 +56,7 @@ export default function ActivarCuenta() {
         >
           {/* Logo/header */}
           <div className="text-center mb-8">
-            <img src="/LogoClinica.jpeg" alt="Clínica Dental Alamillo" className="h-14 w-14 rounded-2xl object-cover mx-auto mb-4 shadow" />
+            <img src={`${import.meta.env.BASE_URL}LogoClinica.jpeg`} alt="Clínica Dental Alamillo" className="h-14 w-14 rounded-2xl object-cover mx-auto mb-4 shadow" />
             <h1 className="text-2xl font-display font-bold text-gray-900">Activa tu cuenta</h1>
             <p className="text-gray-500 text-sm mt-1">Clínica Dental Alamillo</p>
           </div>
