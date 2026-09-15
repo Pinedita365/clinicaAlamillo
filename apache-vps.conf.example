@@ -1,0 +1,19 @@
+# Añade dentro del VirtualHost de javierpineda.es (el que tiene SSL/TLS)
+# Normalmente en /etc/apache2/sites-available/javierpineda.es.conf
+#
+# Requisitos:
+#   a2enmod proxy proxy_http headers
+#   systemctl reload apache2
+#
+# El contenedor frontend (nginx) escucha en 127.0.0.1:3000 y gestiona:
+#   - /clinicadentalalamillo/          → estáticos React (SPA)
+#   - /clinicadentalalamillo/api/      → proxy interno al backend Spring Boot
+# Apache solo habla con el contenedor frontend; el backend NO necesita exposición directa.
+
+    # Conserva el header X-Forwarded-Proto para que el backend sepa que viene de HTTPS
+    RequestHeader set X-Forwarded-Proto "https"
+
+    ProxyPreserveHost On
+
+    ProxyPass        /clinicadentalalamillo  http://127.0.0.1:3000/clinicadentalalamillo
+    ProxyPassReverse /clinicadentalalamillo  http://127.0.0.1:3000/clinicadentalalamillo
